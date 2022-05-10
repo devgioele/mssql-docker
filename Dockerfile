@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/mssql/server:2017-CU24-ubuntu-16.04
+FROM mcr.microsoft.com/mssql/server:2019-latest
 
 # Create a config directory
 RUN mkdir -p /usr/config
