@@ -10,8 +10,10 @@ WORKDIR /usr/config
 COPY . /usr/config
 
 # Make the setup scripts executable
+USER root
 RUN chmod +x /usr/config/entrypoint.sh
 RUN chmod +x /usr/config/configure-db.sh
+USER ${uid}:${gid}
 
 ENTRYPOINT ["./entrypoint.sh"]
 
