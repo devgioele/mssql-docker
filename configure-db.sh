@@ -4,6 +4,8 @@
 export STATUS=1
 i=0
 
+# We delay the execution of the configuration until the server startup is complete.
+# We do so by grepping on the setup logs and waiting for the `Server setup is completed` message.
 while [[ $STATUS -ne 0 ]] && [[ $i -lt 30 ]]; do
 	i=$i+1
 	/opt/mssql-tools/bin/sqlcmd -t 1 -U sa -P $SA_PASSWORD -Q "select 1" >> /dev/null
