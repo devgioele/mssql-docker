@@ -27,7 +27,7 @@ Pulling the image
 docker-compose pull mcmoe/mssqldocker
 ```
 
-/!\ Look at the available tags on DockerHub if you would like to use a specific version
+_Look at the available tags on DockerHub if you would like to use a specific version._
 
 ## Building the image for the first time
 
@@ -49,10 +49,10 @@ Then spin up a new container using `docker-compose`
 docker-compose up
 ```
 
-Note: MSSQL passwords must be at least 8 characters long, contain upper case, lower case and digits.  
-Configuration of the server will occur once it runs; the MSSQL\* env variables are required for this step.
+_Note: MSSQL passwords must be at least 8 characters long, contain upper case, lower case and digits. Be careful not to use quotes `'` `"` and curly brackets `{` `}` for the password, as it may confuse the parser.
+Configuration of the server will occur once it runs; the MSSQL env variables are required for this step._
 
-Note: add a `-d` to run the container in background
+_Note: add a `-d` to run the container in background._
 
 ## Connecting to the container
 
