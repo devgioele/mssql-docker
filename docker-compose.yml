@@ -1,4 +1,4 @@
-version: '3.2'
+version: "3.2"
 
 services:
   db:
@@ -6,10 +6,11 @@ services:
     image: mcmoe/mssqldocker:v2017.CU24.0
     environment:
       ACCEPT_EULA: Y
-      SA_PASSWORD: 2astazeY
+      SA_PASSWORD: 8JK3Fjdl?..a923ojdl%ka
       MSSQL_DB: dev
-      MSSQL_USER: Kobeissi
-      MSSQL_PASSWORD: 7ellowEl7akey
+      MSSQL_DB_SHADOW: dev_shadow
+      MSSQL_USER: worker
+      MSSQL_PASSWORD: P)0r893.mDlA923kwc2-l
     ports:
       - "1433:1433"
     container_name: mssqldev
