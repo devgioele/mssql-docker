@@ -9,16 +9,16 @@ The shadow database is useful for ORMs like [Prisma](https://prisma.io).
 
 ## How to Run
 
-1. Copy the file `docker-compose.yml`
+1. Copy the file `docker-compose-example.yml` and rename it to `docker-compose.yml`
 
 2. Configure the environment variables to your needs
 
-3. Run `docker compose up`
+3. Run `docker compose up -d`
 
 _Note: MSSQL passwords must be at least 8 characters long, contain upper case, lower case and digits. Be careful not to use quotes `'` `"` and curly brackets `{` `}` for the password, as it may confuse the parser.
 Configuration of the server will occur once it runs; the MSSQL env variables are required for this step._
 
-_Note: add a `-d` to run the container in background._
+_Note: Add a `-d` to run the container in background._
 
 ## Connecting to the container
 
