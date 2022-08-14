@@ -4,6 +4,7 @@
 - Create a database
 - Create a shadow database
 - Create a `sysadmin` user
+- Run a custom initialization script
 
 The shadow database is useful for ORMs like [Prisma](https://prisma.io).
 
@@ -22,11 +23,19 @@ _Note: Add a `-d` to run the container in background._
 
 ## Connecting to the container
 
-To connect to the SQL Server in the container, you can docker exec with sqlcmd.
+To connect to the SQL Server in the container and have an interactive shell:
 
+```sh
+docker exec -ti mssql bash -c '/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "$SA_PASSWORD" -d dev'
 ```
-docker exec -it mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SA_PASSWORD
+
+To run a local SQL file:
+```sh
+docker exec -ti mssql bash -c '/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "$SA_PASSWORD" -d dev -i populate.sql'
 ```
+
+_Note: This uses the environment variable `SA_PASSWORD` of the container, not the one of your shell._
+
 
 ## Publishing the image
 
