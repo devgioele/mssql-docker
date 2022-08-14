@@ -29,11 +29,6 @@ To connect to the SQL Server in the container and have an interactive shell:
 docker exec -ti mssql bash -c '/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "$SA_PASSWORD" -d dev'
 ```
 
-To run a local SQL file:
-```sh
-docker exec -ti mssql bash -c '/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "$SA_PASSWORD" -d dev -i populate.sql'
-```
-
 _Note: This uses the environment variable `SA_PASSWORD` of the container, not the one of your shell._
 
 
